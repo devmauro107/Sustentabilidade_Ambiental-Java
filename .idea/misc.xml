@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id>Auxílios para a migração de nível de linguagem JavaJava</id>
+          </State>
+          <State>
+            <id>Docker-compose</id>
+          </State>
+          <State>
+            <id>Frameworks de testeLinguagens JVM</id>
+          </State>
+          <State>
+            <id>Groovy</id>
+          </State>
+          <State>
+            <id>HTML</id>
+          </State>
+          <State>
+            <id>Java</id>
+          </State>
+          <State>
+            <id>Java 25Auxílios para a migração de nível de linguagem JavaJava</id>
+          </State>
+          <State>
+            <id>Kotlin</id>
+          </State>
+          <State>
+            <id>Linguagens JVM</id>
+          </State>
+          <State>
+            <id>OutrosGroovy</id>
+          </State>
+          <State>
+            <id>PerformanceJava</id>
+          </State>
+          <State>
+            <id>Problemas de abstraçãoJava</id>
+          </State>
+          <State>
+            <id>Problemas de estilo de códigoJava</id>
+          </State>
+          <State>
+            <id>Problemas de herançaJava</id>
+          </State>
+          <State>
+            <id>Prováveis bugsKotlin</id>
+          </State>
+          <State>
+            <id>Python</id>
+          </State>
+          <State>
+            <id>Redundância de declaraçãoJava</id>
+          </State>
+          <State>
+            <id>VisibilidadeJava</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>Definido pelo usuário</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_21" default="true" project-jdk-name="21" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>
