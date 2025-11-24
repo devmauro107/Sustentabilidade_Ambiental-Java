@@ -4,5 +4,7 @@ import com.sustentabilidade.model.RelatorioImpacto;
 import java.time.LocalDate;
 
 public class RelatorioService {
-    public RelatorioImpacto gerarRelatorio (LocalDate inicio, LocalDate fim) { return null; }
+    public RelatorioImpacto gerarRelatorio (LocalDate inicio, LocalDate fim) {
+        System.out.println("Relatorio de impacto gerado.");
+        return null;}
 }
