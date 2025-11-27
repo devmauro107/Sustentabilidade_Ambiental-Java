@@ -1,6 +1,6 @@
 package com.sustentabilidade.model;
 
-public class Cliente extends Pessoa{
+public class Cliente extends Pessoa implements Identificavel {
     private String tipoCliente;
 
     public Cliente(Long id,
@@ -15,4 +15,17 @@ public class Cliente extends Pessoa{
 
     public String getTipoCliente() {return tipoCliente;}
     public void setTipoCliente(String tipoCliente) {this.tipoCliente = tipoCliente;}
+
+
+    public Long getId() {
+        return super.getId();}
+
+    @Override
+    public String toString() {
+        return "Cliente {" +
+                "id = " + getId() +
+                ", nome = '" + getNome() + '\'' +
+                ", tipoCliente = '" + tipoCliente + '\'' +
+                '}';
+    }
 }

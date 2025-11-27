@@ -1,6 +1,6 @@
 package com.sustentabilidade.model;
 
-public class Material {
+public class Material implements Identificavel {
     private Long id;
     private String nome;
     private String tipo;
@@ -22,21 +22,28 @@ public class Material {
         this.fatorImpacto = fatorImpacto;
     }
 
-    public Long getId() {return id;}
-    public void setId(Long id) {this.id = id;}
+    public String getNome() {
+        return nome;}
 
-    public String getNome() {return nome;}
-    public void setNome(String nome) {this.nome = nome;}
+    public String getUnidadeMedida() {
+        return unidadeMedida;}
 
-    public String getTipo() {return tipo;}
-    public void setTipo(String tipo) {this.tipo = tipo;}
+    public Double getPrecounitario() {
+        return precounitario;}
 
-    public String getUnidadeMedida() {return unidadeMedida;}
-    public void setUnidadeMedida(String unidadeMedida) {this.unidadeMedida = unidadeMedida;}
+    @Override
+    public  Long getId() {
+        return id;}
 
-    public Double getPrecounitario() {return precounitario;}
-    public void setPrecounitario(Double precounitario) {this.precounitario = precounitario;}
-
-    public Double getFatorImpacto() {return fatorImpacto;}
-    public void setFatorImpacto(Double fatorImpacto) {this.fatorImpacto = fatorImpacto;}
+    @Override
+    public String toString() {
+        return "Material{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", tipo='" + tipo + '\'' +
+                ", unidadeMedida='" + unidadeMedida + '\'' +
+                ", precounitario=" + precounitario +
+                ", fatorImpacto=" + fatorImpacto +
+                '}';
+    }
 }

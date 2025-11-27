@@ -13,6 +13,18 @@ public class Fornecedor extends Pessoa{
         this.categoria = categoria;
     }
 
-    public String getCategoria() {return categoria;}
-    public void setCategoria(String categoria) {this. categoria = categoria;}
+    public String getCategoria() {
+        return categoria;}
+
+    public void setCategoria(String categoria) {
+        this. categoria = categoria;}
+
+    @Override
+    public String toString() {
+        return "Fornecedor {" +
+                "id = " + getId() +
+                ", nome = '" + getNome() + '\'' +
+                ", categoria = '" + categoria + '\'' +
+                '}';
+    }
 }

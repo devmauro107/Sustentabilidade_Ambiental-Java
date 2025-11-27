@@ -2,7 +2,7 @@ package com.sustentabilidade.model;
 
 import java.time.LocalDateTime;
 
-public class NotaFiscal {
+public class NotaFiscal implements Identificavel {
     private Long id;
     private String numero;
     private LocalDateTime dataEmissao;
@@ -20,19 +20,25 @@ public class NotaFiscal {
         this.valorTotal = ValorTotal;
         this.chaveAcesso = ChaveAcesso;
     }
+    @Override
+    public Long getId() {
+        return id;}
 
-    public Long getId() {return id;}
-    public void setId(Long id) {this.id = id;}
+    public String getNumero() {
+        return numero;}
+    public Double getValorTotal() {
+        return valorTotal;}
+    public String getChaveAcesso() {
+        return chaveAcesso;}
 
-    public String getNumero() {return numero;}
-    public void setNumero(String numero) {this.numero = numero;}
-
-    public LocalDateTime getDataEmissao() {return dataEmissao;}
-    public void setDataEmissao(LocalDateTime dataEmissao) {this.dataEmissao = dataEmissao;}
-
-    public Double getValorTotal() {return valorTotal;}
-    public void setValorTotal(Double valorTotal) {this.valorTotal = valorTotal;}
-
-    public String getChaveAcesso() {return chaveAcesso;}
-    public void setChaveAcesso(String chaveAcesso) {this.chaveAcesso = chaveAcesso;}
+    @Override
+    public String toString() {
+        return " NotaFiscal {" +
+                "id = " + id +
+                ", numero = '" + numero + '\'' +
+                ", dataEmissão = " + dataEmissao +
+                ", valorTotal = " + valorTotal +
+                ", chaveAcesso = '" + chaveAcesso + '\'' +
+                '}';
+    }
 }

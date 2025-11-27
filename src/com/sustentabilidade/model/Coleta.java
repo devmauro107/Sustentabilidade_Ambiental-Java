@@ -2,7 +2,7 @@ package com.sustentabilidade.model;
 
 import java.time.LocalDateTime;
 
-public class Coleta {
+public class Coleta implements Identificavel {
     private Long id;
     private LocalDateTime data;
     private Double quantidade;
@@ -18,15 +18,21 @@ public class Coleta {
         this.status = status;
     }
 
-    public Long getId() {return id;}
-    public void setId(Long id) {this.id = id;}
+    public Double getQuantidade() {
+        return quantidade;}
 
-    public LocalDateTime getData() {return data;}
-    public void setData(LocalDateTime data) {this.data = data;}
+    @Override
+    public Long getId() {
+        return id;}
 
-    public Double getQuantidade() {return quantidade;}
-    public void setQuantidade(Double quantidade) {this.quantidade = quantidade;}
+    @Override
+    public String toString() {
+        return " Coleta {" +
+                "id = " + id +
+                ", data = " + data +
+                ", quantidade = " + quantidade +
+                ", status = " + status +
+                '}';
+    }
 
-    public StatusColeta getStatus() {return status;}
-    public void setStatus(StatusColeta status) {this.status = status;}
 }

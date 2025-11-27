@@ -13,12 +13,21 @@ public class ItensVendas {
         this.precoUnitario = precoUnitario;
     }
 
-    public Material getMaterial() {return material;}
-    public void setMaterial(Material material) {this.material = material;}
+    public Material getMaterial() {
+        return material;}
 
-    public Double getQuantidade() {return quantidade;}
-    public void setQuantidade(Double quantidade) {this.quantidade = quantidade;}
+    public void setMaterial(Material material) {
+        this.material = material;}
 
-    public Double getPrecoUnitario() {return precoUnitario;}
-    public void setPrecoUnitario(Double precoUnitario) {this.precoUnitario = precoUnitario;}
+    public Double getQuantidade() {
+        return quantidade;}
+
+    public void setQuantidade(Double quantidade) {
+        this.quantidade = quantidade;}
+
+    public Double getPrecoUnitario() {
+        return precoUnitario;}
+
+    public void setPrecoUnitario(Double precoUnitario) {
+        this.precoUnitario = precoUnitario;}
 }
