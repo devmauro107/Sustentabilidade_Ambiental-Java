@@ -12,7 +12,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Sistema de Sustentabilidade Ambiental iniciado 🚀");
+        System.out.println("Sistema de Sustentabilidade Ambiental iniciado ");
 
         Cliente cliente = new Cliente(
                 1L,
@@ -20,14 +20,14 @@ public class Main {
                 "123.456.789.00",
                 "mauro@gmail.com",
                 "123456789",
-                "Pessoa Fizica"
+                "Pessoa Física"
         );
         System.out.println("Cliente criado: " + cliente.getNome());
 
         Material material = new Material(
                 1L,
-                "Plastico PET",
-                "Plastico",
+                "Plástico PET",
+                "Plástico",
                 "Kg",
                 2.5,
                 1.2
@@ -41,7 +41,7 @@ public class Main {
                 StatusColeta.CONCLUIDA
         );
         EstoqueService estoqueService = new EstoqueService();
-        estoqueService.registrarColeta(coleta);
+        estoqueService.registrarColeta(material, coleta);
 
         List<ItensVendas> itens = new ArrayList<>();
         itens.add(new ItensVendas(material, 50.0, material.getPrecounitario()));
@@ -54,17 +54,25 @@ public class Main {
         );
 
         VendaService vendaService = new VendaService();
-        vendaService.adicionarItens(venda, material, 50.0);
-        vendaService.fecharVenda(venda);
+            vendaService.adicionarItens(venda, material, 50.0);
+            vendaService.fecharVenda(venda);
+            estoqueService.autorizarAposVenda(venda);
+                System.out.println(venda);
+                System.out.println(venda);
 
         NotaFiscalService nfService = new NotaFiscalService();
         NotaFiscal nf = nfService.emitir(venda);
-        nfService.validar(nf);
+            nfService.validar(nf);
+                System.out.println(nf);
 
         RelatorioService relatorioService = new RelatorioService();
-        relatorioService.gerarRelatorio(LocalDateTime.now().minusMonths(1).toLocalDate(), LocalDateTime.now().toLocalDate());
+        relatorioService.gerarRelatorio
+                (LocalDateTime.now().toLocalDate(),
+                        LocalDateTime.now().toLocalDate()
+                );
 
+        String relatorio = "";
+        System.out.println(relatorio);
         System.out.println("Fluxo completo executado com sucesso!");
-
     }
 }

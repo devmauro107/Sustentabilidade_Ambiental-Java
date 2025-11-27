@@ -3,7 +3,7 @@ package com.sustentabilidade.model;
 import java.time.LocalDateTime;
 import java.util.List;
 
-public class Venda {
+public class Venda implements Identificavel {
     private Long id;
     private LocalDateTime data;
     private List<ItensVendas> itens;
@@ -19,15 +19,31 @@ public class Venda {
         this.total = total;
     }
 
-    public long getId() {return id;}
-    public void setId(Long id) {this.id = id;}
+    public Venda() {}
 
-    public LocalDateTime getData() {return data;}
-    public void setData(LocalDateTime data) {this.data = data;}
+    public List<ItensVendas> getItens() {
+        return itens;}
 
-    public List<ItensVendas> getItens() {return itens;}
-    public void setItens(List<ItensVendas> itens) {this.itens = itens;}
+    public void setItens(List<ItensVendas> itens) {
+        this.itens = itens;}
 
-    public Double getTotal() {return total;}
-    public void setTotal(Double total) {this.total = total;}
+    public Double getTotal() {
+        return total;}
+
+    public void setTotal(Double total) {
+        this.total = total;}
+
+    @Override
+    public Long getId() {
+        return id;}
+
+    @Override
+    public String toString() {
+        return " Vendas {" +
+                "id = " + id +
+                ", data = " + data +
+                ", total = " + total +
+                ", itens = " + itens +
+                '}';
+    }
 }
