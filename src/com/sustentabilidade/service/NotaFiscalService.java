@@ -26,4 +26,8 @@ public class NotaFiscalService {
 
         System.out.println("Nota fiscal validada." + nf.getNumero() + " | Válida: " + valido);
         return valido;}
+
+    public NotaFiscal emitirNotaFiscal(Venda venda) {
+        return null;
+    }
 }

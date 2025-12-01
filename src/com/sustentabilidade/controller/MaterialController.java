@@ -1,14 +1,19 @@
 package com.sustentabilidade.controller;
 
 import com.sustentabilidade.model.Material;
+import com.sustentabilidade.repository.MaterialRepository;
 
 public class MaterialController {
 
+    private MaterialRepository materialRepository = new MaterialRepository();
+
     public void cadastrarMaterial(Material material) {
-        System.out.println("Cadastro de Material");
+        materialRepository.salvar(material);
+        System.out.println("Material cadastrado: " + material);
     }
 
-    public void listarMaterial(Material material) {
-        System.out.println("Dados do Material: " + material);
+    public void listarMateriais() {
+        System.out.println("Lista de materiais:");
+        materialRepository.listarTodos().forEach(System.out::println);
     }
 }
