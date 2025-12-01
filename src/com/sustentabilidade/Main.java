@@ -2,24 +2,20 @@ package com.sustentabilidade;
 
 import com.sustentabilidade.controller.*;
 import com.sustentabilidade.model.*;
-import com.sustentabilidade.service.EstoqueService;
-import com.sustentabilidade.service.NotaFiscalService;
-import com.sustentabilidade.service.RelatorioService;
-import com.sustentabilidade.service.VendaService;
+import com.sustentabilidade.service.*;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.HashMap;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("=================================================================");
-        System.out.println("------------- SISTEMA DE SUSTENTABILIDADE AMBIENTAL -------------");
-        System.out.println("---------------------------  INICIADA ---------------------------");
+        System.out.println("Sistema de Sustentabilidade Ambiental iniciado 🚀");
 
         Scanner scanner = new Scanner(System.in);
 
-        Estoque estoque = new Estoque(1L, null);
+        Estoque estoque = new Estoque(1L, new HashMap<>());
         EstoqueService estoqueService = new EstoqueService(estoque);
         VendaService vendaService = new VendaService();
         NotaFiscalService nfService = new NotaFiscalService();
@@ -51,41 +47,43 @@ public class Main {
 
             switch (opcao) {
                 case 1:
+
                     System.out.println("Digite o nome do cliente:");
                         String nomeCliente = scanner.nextLine();
+
                     System.out.println("Digite o documento:");
                         String documentoCliente = scanner.nextLine();
+
                     System.out.println("Digite o email:");
                         String emailCliente = scanner.nextLine();
+
                     System.out.println("Digite o telefone:");
                         String telefoneCliente = scanner.nextLine();
-                    System.out.println("Cadastro de cliente concluído com sucesso! ✅");
 
-                        cliente = new Cliente(1L,
-                                nomeCliente,
-                                documentoCliente,
-                                emailCliente,
-                                telefoneCliente,
-                                "Pessoa Física");
-                        clienteController.cadastrarCliente(cliente);
+                    cliente = new Cliente(1L, nomeCliente, documentoCliente, emailCliente, telefoneCliente, "Pessoa Física");
+                    clienteController.cadastrarCliente(cliente);
 
                     System.out.println("Digite o nome do material:");
                         String nomeMaterial = scanner.nextLine();
+
                     System.out.println("Digite o tipo:");
                         String tipoMaterial = scanner.nextLine();
+
                     System.out.println("Digite a unidade de medida:");
                         String unidadeMedida = scanner.nextLine();
+
                     System.out.println("Digite o preço unitário (use ponto ou vírgula):");
                         String precoTexto = scanner.nextLine().replace(",", ".");
-                        double precoUnitario = Double.parseDouble(precoTexto);
+                            double precoUnitario = Double.parseDouble(precoTexto);
+
                     System.out.println("Digite o fator de impacto CO2 (use ponto ou vírgula):");
                         String impactoTexto = scanner.nextLine().replace(",", ".");
-                        double fatorImpacto = Double.parseDouble(impactoTexto);
-                    System.out.println("Cadastro de material concluído com sucesso! ✅");
-                            scanner.nextLine();
+                            double fatorImpacto = Double.parseDouble(impactoTexto);
 
-                    material = new Material(1L, nomeMaterial, tipoMaterial, unidadeMedida, precoUnitario, fatorImpacto);
-                    materialController.cadastrarMaterial(material);
+                scanner.nextLine();
+
+                        material = new Material(1L, nomeMaterial, tipoMaterial, unidadeMedida, precoUnitario, fatorImpacto);
+                        materialController.cadastrarMaterial(material);
                     break;
 
                 case 2:
@@ -105,9 +103,9 @@ public class Main {
                     venda = new Venda(1L, LocalDateTime.now(), new ArrayList<>(), 0.0);
                     System.out.println("Digite a quantidade a ser vendida (use ponto ou vírgula):");
                         String quantidadeTexto = scanner.nextLine().replace(",", ".");
-                        double quantidadeVenda = Double.parseDouble(quantidadeTexto);
-                            scanner.nextLine();
-                                vendaController.realizarVenda(venda, material, quantidadeVenda);
+                            double quantidadeVenda = Double.parseDouble(quantidadeTexto);
+                    scanner.nextLine();
+                        vendaController.realizarVenda(venda, material, quantidadeVenda);
                     break;
 
                 case 4:
@@ -132,10 +130,8 @@ public class Main {
                 default:
                     System.out.println("Opção inválida, tente novamente!");
             }
-
         } while (opcao != 0);
 
         scanner.close();
-        System.out.println("Programa finalizado.");
     }
 }
