@@ -50,40 +50,39 @@ public class Main {
 
                     System.out.println("Digite o nome do cliente:");
                         String nomeCliente = scanner.nextLine();
+
                     System.out.println("Digite o documento:");
                         String documentoCliente = scanner.nextLine();
+
                     System.out.println("Digite o email:");
                         String emailCliente = scanner.nextLine();
+
                     System.out.println("Digite o telefone:");
                         String telefoneCliente = scanner.nextLine();
 
-                    cliente = new Cliente(1L, nomeCliente,
-                            documentoCliente,
-                            emailCliente,
-                            telefoneCliente, "Pessoa Física");
+                    cliente = new Cliente(1L, nomeCliente, documentoCliente, emailCliente, telefoneCliente, "Pessoa Física");
                     clienteController.cadastrarCliente(cliente);
 
                     System.out.println("Digite o nome do material:");
                         String nomeMaterial = scanner.nextLine();
+
                     System.out.println("Digite o tipo:");
                         String tipoMaterial = scanner.nextLine();
+
                     System.out.println("Digite a unidade de medida:");
                         String unidadeMedida = scanner.nextLine();
+
                     System.out.println("Digite o preço unitário (use ponto ou vírgula):");
                         String precoTexto = scanner.nextLine().replace(",", ".");
                             double precoUnitario = Double.parseDouble(precoTexto);
+
                     System.out.println("Digite o fator de impacto CO2 (use ponto ou vírgula):");
                         String impactoTexto = scanner.nextLine().replace(",", ".");
                             double fatorImpacto = Double.parseDouble(impactoTexto);
 
                 scanner.nextLine();
 
-                        material = new Material(1L,
-                                nomeMaterial,
-                                tipoMaterial,
-                                unidadeMedida,
-                                precoUnitario,
-                                fatorImpacto);
+                        material = new Material(1L, nomeMaterial, tipoMaterial, unidadeMedida, precoUnitario, fatorImpacto);
                         materialController.cadastrarMaterial(material);
                     break;
 
